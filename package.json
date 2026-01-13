@@ -1,0 +1,20 @@
+{
+  "name": "ts-compiler-bench",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript compiler performance benchmark demo (TS 3.9.5 vs 5.8.3)",
+  "scripts": {
+    "build:ts3": "npx --yes -p typescript@3.9.5 tsc -b -v",
+    "build:ts58": "npx --yes -p typescript@5.8.3 tsc -b -v",
+    "check:ts3": "npx --yes -p typescript@3.9.5 tsc --noEmit --extendedDiagnostics",
+    "check:ts58": "npx --yes -p typescript@5.8.3 tsc --noEmit --extendedDiagnostics",
+    "clean": "node scripts/clean.js",
+    "bench:ts3": "node scripts/bench.js ts3",
+    "bench:ts58": "node scripts/bench.js ts58",
+    "bench:incremental:ts3": "node scripts/bench-incremental.js ts3",
+    "bench:incremental:ts58": "node scripts/bench-incremental.js ts58"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
